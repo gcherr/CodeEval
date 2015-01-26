@@ -5,10 +5,8 @@ import java.lang.Integer;
 
 public class Main{
    static int fib(int base){
-      if (base == 0)
-         return 0;
-      else if (base == 1)
-         return 1;
+      if (base <= 1)
+         return base;
       else
          return (fib(base-1) + fib(base-2)); 
    }
