@@ -1,7 +1,5 @@
 import sys
 
-#Reads the number right to left and adds each digit along the way
-#Does so by adding the rightmost digit to a total and recursively calling sum
 def sum(base):
    if base == 0:
       return 0
