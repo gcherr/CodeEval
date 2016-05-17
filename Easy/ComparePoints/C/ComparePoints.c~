@@ -1,0 +1,86 @@
+#include <stdio.h>
+
+void getDir(int x, int y);
+
+int main(int argc, char** argv){
+   FILE* in = fopen(argv[1], "r");
+   int x1, x2, y1, y2, xres, yres;
+   while (fscanf(in, "%d %d %d %d \n", &x1, &y1, &x2, &y2) != EOF ){
+      xres = x2 - x1;
+      yres = y2 - y1;
+
+      getDir(xres, yres);
+
+      printf("\n");
+   }  
+   return 0;
+}
+
+void getDir2(int x, int y){
+   switch(1){
+   case x == 0 && y == 0:
+      printf("here");
+   case x == 0:
+      if(y > 0){
+         printf("N");
+      }
+      else if(y < 0){
+         printf("S");
+      }
+   case y == 0:
+      if(x > 0){
+         printf("E");
+      }
+      else if(x < 0){
+         printf("W");
+      }
+   case x > 0:
+      if(y > 0){
+         printf("NE");
+      }
+      else if(y < 0){
+         printf("SE");
+      }
+   case x < 0:
+      if(y > 0){
+         printf("NW");
+      }
+      else if(x < 0 && y < 0){
+         printf("SW");
+      }
+  }
+}
+
+void getDir(int x, int y){
+   if(x == 0 && y == 0){
+      printf("here");
+   }
+   else if(x == 0){
+      if(y > 0){
+         printf("N");
+      }
+      else if(y < 0){
+         printf("S");
+      }
+   }
+   else if(y == 0){
+      if(x > 0){
+         printf("E");
+      }
+      else if(x < 0){
+         printf("W");
+      }
+   }
+   else if(x > 0 && y > 0){
+      printf("NE");
+   }
+   else if(x > 0 && y < 0){
+      printf("SE");
+   }
+   else if(x < 0 && y > 0){
+      printf("NW");
+   }
+   else if(x < 0 && y < 0){
+      printf("SW");
+   }
+}
